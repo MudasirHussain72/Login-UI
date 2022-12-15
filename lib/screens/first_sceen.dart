@@ -13,7 +13,7 @@ class _FirstScreenState extends State<FirstScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage("assets/bg.jpg"), fit: BoxFit.cover),
         ),
@@ -23,15 +23,15 @@ class _FirstScreenState extends State<FirstScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(
+                const Text(
                   "abda",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 24,
                       fontWeight: FontWeight.w600),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Text(
                     "Watch your favoirite series or movies on\nonly one platform.You can watch it\nanytime and anywhere",
                     textAlign: TextAlign.center,
@@ -49,7 +49,7 @@ class _FirstScreenState extends State<FirstScreen> {
                         Navigator.pushNamed(context, "/LoginScreen");
                       },
                       title: "title",
-                      color: Color(0xff5568FE)),
+                      color: const Color(0xff5568FE)),
                 )
               ]),
         ),

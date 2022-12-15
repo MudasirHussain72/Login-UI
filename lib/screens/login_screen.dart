@@ -14,20 +14,20 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff181920),
+      backgroundColor: const Color(0xff181920),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Text(
+            const Text(
               "Welcome Back!",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 24,
                   fontWeight: FontWeight.w600),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Text(
                 "Please sign in to your account",
                 textAlign: TextAlign.center,
@@ -39,14 +39,20 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 40),
-              child: MyTextField(hintText: "Email", color: Color(0xff585A60)),
+              child: MyTextField(
+                  hintText: "Email", color: const Color(0xff585A60)),
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 6),
-              child:
-                  MyTextField(hintText: "Password", color: Color(0xff585A60)),
+              child: MyTextField(
+                  icon: const Icon(
+                    Icons.remove_red_eye_outlined,
+                    color: Color(0xff585A60),
+                  ),
+                  hintText: "Password",
+                  color: const Color(0xff585A60)),
             ),
-            Align(
+            const Align(
               alignment: Alignment.topRight,
               child: Text(
                 "Forget Password?",
@@ -57,30 +63,29 @@ class _LoginScreenState extends State<LoginScreen> {
                     fontWeight: FontWeight.w600),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 60,
             ),
             RoundedButton(
-                ontap: () {}, title: "Sign In", color: Color(0xff5568FE)),
-            SizedBox(height: 10),
-            RoundedButton(ontap: () {}, title: "Sign In", color: Colors.white),
-            SizedBox(
-              height: 6,
-            ),
+                ontap: () {}, title: "Sign In", color: const Color(0xff5568FE)),
+            const SizedBox(height: 15),
             RichText(
               text: TextSpan(
-                text: 'Forgot password ? / ',
-                style: TextStyle(fontSize: 13, color: Colors.black),
+                text: "Don't have an account ?",
+                style: const TextStyle(
+                    fontSize: 13,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500),
                 children: [
                   TextSpan(
-                      text: 'Reset Now',
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      text: ' Sign Up',
+                      style: const TextStyle(
+                          color: Color(0xff5568FE),
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          Navigator.pushNamed(context, "/ResetPassword");
+                          Navigator.pushNamed(context, "/SignUpScreen");
                         }),
                 ],
               ),
